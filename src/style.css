@@ -1,1 +1,58 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.btn {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.submit {
+  background-color: rgb(95, 241, 28);
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10%;
+  margin-left: 1rem;
+}
+.sort {
+  background-color: rgb(95, 241, 28);
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10%;
+  margin-left: 1rem;
+}
+.card {
+  width: 12.5rem;
+  height: 17.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 35px;
+  box-shadow: 1px 1px 1px black;
+}
+
+.color1 {
+  color: red;
+}
+.color2 {
+  color: black;
+}
+
+.footer {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+.main {
+  align-self: center;
+}
