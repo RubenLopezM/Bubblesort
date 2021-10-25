@@ -82,12 +82,9 @@ SORT_BUTTON.addEventListener("click", event => {
   for (let i = 0; i < len; i++) {
     for (let j = 1; j < len; j++) {
       if (cards[j - 1].number > cards[j].number) {
-        let num = cards[j - 1].number;
-        let symbol = cards[j - 1].pattern;
-        cards[j - 1].number = cards[j].number;
-        cards[j - 1].pattern = cards[j].pattern;
-        cards[j].number = num;
-        cards[j].pattern = symbol;
+        let num = cards[j - 1];
+        cards[j - 1] = cards[j];
+        cards[j] = num;
       }
     }
   }
