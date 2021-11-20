@@ -44,7 +44,18 @@ function drawCards(object) {
 
     let main = document.createElement("div");
     main.classList.add("main");
-    main.innerHTML = card["number"];
+    if (card["number"] == 10) {
+      main.innerHTML = "J";
+    } else if (card["number"] == 11) {
+      main.innerHTML = "Q";
+    } else if (card["number"] == 12) {
+      main.innerHTML = "K";
+    } else if (card["number"] == 13) {
+      main.innerHTML = "A";
+    } else {
+      main.innerHTML = card["number"];
+    }
+
     element.appendChild(main);
 
     let bottom = document.createElement("div");
@@ -63,7 +74,23 @@ function drawCards(object) {
     }
   }
 }
+
 let cards = [];
+
+function sortcards(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if (cards[j - 1].number > cards[j].number) {
+        let num = cards[j - 1];
+        cards[j - 1] = cards[j];
+        cards[j] = num;
+        ROW.innerHTML = "";
+        drawCards(cards);
+      }
+    }
+  }
+}
+
 DRAW_BUTTON.addEventListener("submit", event => {
   event.preventDefault();
   ROW.innerHTML = "";
@@ -77,17 +104,5 @@ DRAW_BUTTON.addEventListener("submit", event => {
 
 SORT_BUTTON.addEventListener("click", event => {
   event.preventDefault();
-  let len = cards.length;
-
-  for (let i = 0; i < len; i++) {
-    for (let j = 1; j < len; j++) {
-      if (cards[j - 1].number > cards[j].number) {
-        let num = cards[j - 1];
-        cards[j - 1] = cards[j];
-        cards[j] = num;
-      }
-    }
-  }
-  ROW.innerHTML = "";
-  drawCards(cards);
+  sortcards(cards);
 });
