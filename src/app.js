@@ -84,10 +84,9 @@ function sortcards(arr) {
         let num = cards[j - 1];
         cards[j - 1] = cards[j];
         cards[j] = num;
+        drawCards(cards);
       }
     }
-    ROW.innerHTML = "";
-    drawCards(cards);
   }
 }
 

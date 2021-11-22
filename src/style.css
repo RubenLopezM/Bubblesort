@@ -2,9 +2,6 @@
 
 body {
   background-color: green;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
@@ -29,12 +26,10 @@ body {
   margin-left: 1rem;
 }
 .card {
-  width: 12.5rem;
-  height: 17.5rem;
+  width: 8.5rem;
+  height: 12.5rem;
   background-color: white;
   border-radius: 0.5rem;
-  display: flex;
-  justify-content: space-between;
   margin: 1rem;
   font-weight: bold;
   font-size: 35px;
@@ -55,4 +50,11 @@ body {
 
 .main {
   align-self: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
 }
